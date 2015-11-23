@@ -16,7 +16,7 @@ main()
 	rm->addDirResource("resources");
 
 	auto scene = new pc::Scene(pc::Scene::SCENE_2D);
-	scene->getActiveCamera()->setOrthoSize(640, 480);
+	scene->getActiveCamera()->setOrthoSize(core->getScreenWidth(), core->getScreenHeight());
 
 	auto entity = new pc::SceneImage("resources/knot.png");
 	entity->setMaterialByName("Blur");
@@ -27,14 +27,12 @@ main()
 	auto dist = binding->addParam(pc::ProgramParam::PARAM_NUMBER, "dist");
 	auto phase = binding->addParam(pc::ProgramParam::PARAM_NUMBER, "phase");
 
-	auto timer = 0;
+	Number t = 0;
 
 	do {
+		t += 300.*core->getElapsed();
 		const float f = 1.f/64.f;
-		dist->setNumber((.5f + .5f*sinf(.01f*timer))*f);
-
-		phase->setNumber(.02f*timer);
-
-		timer += 300.*core->getElapsed();
+		dist->setNumber((.5f + .5f*sinf(.01f*t))*f);
+		phase->setNumber(.02f*t);
 	} while (core->updateAndRender());
 }

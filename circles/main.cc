@@ -8,7 +8,7 @@ main()
 
 	auto view = new PolycodeView("foo");
 
-	auto core = new POLYCODE_CORE(view, 640, 480, false, true, 0, 0, 90, 0, true);
+	auto core = new POLYCODE_CORE(view, 480, 270, false, true, 0, 0, 90, 0, true);
 
 	auto cs = CoreServices::getInstance();
 
@@ -16,9 +16,9 @@ main()
 	rm->addDirResource("resources");
 
 	auto scene = new Scene(Scene::SCENE_2D);
-	scene->getActiveCamera()->setOrthoSize(640, 480);
+	scene->getActiveCamera()->setOrthoSize(core->getScreenWidth(), core->getScreenHeight());
 
-	auto entity = new ScenePrimitive(ScenePrimitive::TYPE_VPLANE, 480, 270);
+	auto entity = new ScenePrimitive(ScenePrimitive::TYPE_VPLANE, core->getScreenWidth(), core->getScreenHeight());
 	entity->setMaterialByName("Transition");
 
 	scene->addChild(entity);
@@ -29,12 +29,8 @@ main()
 
 	Number t = 0;
 
-	for (;;) {
+	do {
 		t += core->getElapsed();
-
 		level->setNumber(.5f + .5f*sinf(2.*t));
-
-		if (!core->updateAndRender())
-			break;
-	}
+	} while (core->updateAndRender());
 }
