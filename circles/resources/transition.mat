@@ -1,0 +1,18 @@
+<polycode>
+	<shaders>
+		<shader type="glsl" name="TransitionShader">
+			<vp source="resources/transition.vert"/>
+			<fp source="resources/transition.frag"/>
+		</shader>
+	</shaders>
+	<materials>
+		<material name="Transition">
+			<shader name="TransitionShader">
+				<textures>
+					<texture name="from">resources/from.png</texture>
+					<texture name="to">resources/to.png</texture>
+				</textures>
+			</shader>
+		</material>
+	</materials>
+</polycode>

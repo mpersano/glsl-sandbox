@@ -32,3 +32,4 @@ set(POLYCODE_LIBRARIES
 	freetype)
 
 add_subdirectory(ghost)
+add_subdirectory(circles)
