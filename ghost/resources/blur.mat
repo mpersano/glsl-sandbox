@@ -1,0 +1,13 @@
+<polycode>
+	<shaders>
+		<shader type="glsl" name="BlurShader">
+			<vp source="resources/blur.vert"/>
+			<fp source="resources/blur.frag"/>
+		</shader>
+	</shaders>
+	<materials>
+		<material name="Blur">
+			<shader name="BlurShader"/>
+		</material>
+	</materials>
+</polycode>

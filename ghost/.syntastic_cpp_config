@@ -1,0 +1,3 @@
+-I/home/fzort/projects/Polycode/Release/Linux/Framework/Core/include
+-I/home/fzort/projects/Polycode/Release/Linux/Framework/Core/Dependencies/include
+-I/home/fzort/projects/Polycode/Release/Linux/Framework/Core/Dependencies/include/AL
