@@ -25,12 +25,15 @@ main()
 
 	auto binding = entity->getLocalShaderOptions();
 
+	auto resolution = binding->addParam(ProgramParam::PARAM_VECTOR2, "resolution");
 	auto level = binding->addParam(ProgramParam::PARAM_NUMBER, "level");
+
+	resolution->setVector2(Vector2(core->getScreenWidth(), core->getScreenHeight()));
 
 	Number t = 0;
 
 	do {
 		t += core->getElapsed();
-		level->setNumber(.5f + .5f*sinf(2.*t));
+		level->setNumber(.5f + .5f*sinf(.75*t));
 	} while (core->updateAndRender());
 }
