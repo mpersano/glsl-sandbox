@@ -33,3 +33,4 @@ set(POLYCODE_LIBRARIES
 
 add_subdirectory(ghost)
 add_subdirectory(circles)
+add_subdirectory(ripple)

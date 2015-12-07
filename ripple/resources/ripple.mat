@@ -1,0 +1,17 @@
+<polycode>
+	<shaders>
+		<shader type="glsl" name="RippleShader">
+			<vp source="resources/ripple.vert"/>
+			<fp source="resources/ripple.frag"/>
+		</shader>
+	</shaders>
+	<materials>
+		<material name="Ripple">
+			<shader name="RippleShader">
+				<textures>
+					<texture name="background">resources/circuit.png</texture>
+				</textures>
+			</shader>
+		</material>
+	</materials>
+</polycode>
